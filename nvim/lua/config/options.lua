@@ -14,6 +14,9 @@ vim.opt.list = false
 -- No AI please
 vim.g.ai_cmp = false
 
+-- jk = escape
+vim.keymap.set({ "i" }, "jk", "<Esc>")
+
 if vim.g.neovide then
   vim.opt.guifont = "MesloLGM Nerd Font"
 
