@@ -43,6 +43,11 @@ if vim.g.neovide then
   vim.keymap.set({ "n", "i", "v", "c", "t" }, "<D-v>", paste, { silent = true, desc = "Paste" })
   vim.keymap.set({ "n", "i", "v", "c", "t" }, "<D-w>", quit, { desc = "Quit" })
 
+  -- Set initial scale factor if we start at the default of 1.0
+  if vim.g.neovide_scale_factor == 1.0 then
+    vim.g.neovide_scale_factor = 1.2
+  end
+
   local change_scale_factor = function(delta)
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
   end
