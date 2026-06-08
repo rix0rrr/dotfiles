@@ -12,13 +12,6 @@ vim.opt.list = false
 -- No AI please
 vim.g.ai_cmp = false
 
--- jk = escape
-vim.keymap.set({ "i" }, "jk", "<Esc>")
-
--- Cmd-A = select all
-vim.keymap.set({ "n" }, "<D-a>", "ggVG")
-vim.keymap.set({ "i", "v" }, "<D-a>", "<ESC>ggVG")
-
 -- Do not delete/yank/whatever into system clipboard; keep it separate from Vim clipboard
 vim.opt.clipboard = ""
 

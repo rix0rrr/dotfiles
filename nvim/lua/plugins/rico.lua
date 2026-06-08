@@ -13,6 +13,8 @@ return {
       indent = {
         enabled = false,
       },
+      -- No animation scrolling plx
+      scroll = { enabled = false },
     },
   },
 
@@ -78,8 +80,39 @@ return {
       },
     },
   },
+
+  -- Strip trailing whitespace
+  {
+    "thirtythreeforty/lessspace.vim",
+  },
+
+  -- Add a scroll bar that shows annotations
+  {
+    "petertriho/nvim-scrollbar",
+  },
+
+  -- Do not have <CR> automatically insert autocomplete suggestion (annoying if it's at the
+  -- end of a line, for example). Not preselecting anything so that <CR> has nothing to autocomplete,
+  -- you MUST use <C-y>, <C-n>, <C-p> instead.
+  {
+    {
+      "saghen/blink.cmp",
+      optional = true,
+      opts = {
+        completion = {
+          list = {
+            selection = {
+              preselect = false,
+            },
+          },
+        },
+      },
+    },
+  },
 }
 
 -- TODO
 -- Switching tabs
 -- Ctrl-P file manager
+--
+-- Reminders:
