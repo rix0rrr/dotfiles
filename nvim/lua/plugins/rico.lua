@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "desert",
+      colorscheme = "oasis-desert",
     },
   },
 
@@ -93,11 +93,14 @@ return {
 
   -- Do not have <CR> automatically insert autocomplete suggestion (annoying if it's at the
   -- end of a line, for example). Not preselecting anything so that <CR> has nothing to autocomplete,
-  -- you MUST use <C-y>, <C-n>, <C-p> instead.
+  -- you MUST use <C-y>, <C-n>, <C-p> instead. Use <Tab> instead as an alternative.
   {
     {
       "saghen/blink.cmp",
       optional = true,
+      keymap = {
+        preset = "super-tab",
+      },
       opts = {
         completion = {
           list = {
@@ -108,6 +111,17 @@ return {
         },
       },
     },
+  },
+
+  {
+    "uhs-robert/oasis.nvim",
+    -- Not exactly sure how all of this interacts with LazyVim, disabling it seems to work well enough
+    -- lazy = false,
+    -- priority = 1000,
+    -- config = function()
+    --   require("oasis").setup() -- (see Configuration below for all customization options)
+    --   vim.cmd.colorscheme("oasis") -- After setup, apply theme (or any style like "oasis-night")
+    -- end,
   },
 }
 

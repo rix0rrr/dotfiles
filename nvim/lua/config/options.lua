@@ -3,6 +3,9 @@
 -- Add any additional options here
 vim.g.mapleader = ","
 
+-- Use the dark theme
+vim.o.background = "dark"
+
 -- Just absolute line numbers
 vim.opt.relativenumber = false
 
