@@ -18,6 +18,9 @@ vim.g.ai_cmp = false
 -- Do not delete/yank/whatever into system clipboard; keep it separate from Vim clipboard
 vim.opt.clipboard = ""
 
+-- I trust eslint enough to fix my shit
+vim.g.lazyvim_eslint_auto_format = true
+
 if vim.g.neovide then
   vim.opt.guifont = "MesloLGM Nerd Font"
 
