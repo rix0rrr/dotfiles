@@ -3,8 +3,6 @@
 -- Add any additional options here
 vim.g.mapleader = ","
 
-vim.print("X")
-
 -- Just absolute line numbers
 vim.opt.relativenumber = false
 
@@ -16,6 +14,10 @@ vim.g.ai_cmp = false
 
 -- jk = escape
 vim.keymap.set({ "i" }, "jk", "<Esc>")
+
+-- Cmd-A = select all
+vim.keymap.set({ "n" }, "<D-a>", "ggVG")
+vim.keymap.set({ "i", "v" }, "<D-a>", "<ESC>ggVG")
 
 if vim.g.neovide then
   vim.opt.guifont = "MesloLGM Nerd Font"
