@@ -19,6 +19,9 @@ vim.keymap.set({ "i" }, "jk", "<Esc>")
 vim.keymap.set({ "n" }, "<D-a>", "ggVG")
 vim.keymap.set({ "i", "v" }, "<D-a>", "<ESC>ggVG")
 
+-- Do not delete/yank/whatever into system clipboard; keep it separate from Vim clipboard
+vim.opt.clipboard = ""
+
 if vim.g.neovide then
   vim.opt.guifont = "MesloLGM Nerd Font"
 
