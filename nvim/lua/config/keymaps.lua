@@ -14,3 +14,7 @@ vim.keymap.set({ "n", "i" }, "<C-->", "<C-o>")
 
 -- <Alt-BS> should remove a whole word.
 vim.keymap.set({ "i" }, "<A-bs>", "<C-w>")
+
+-- <D-{>, <D-}> should move between buffers
+vim.keymap.set({ "n" }, "<D-{>", ":bp<CR>")
+vim.keymap.set({ "n" }, "<D-}>", ":bn<CR>")
