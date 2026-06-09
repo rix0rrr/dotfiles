@@ -13,8 +13,15 @@ return {
       indent = {
         enabled = false,
       },
-      -- No animation scrolling plx
+      -- No scrolling animation plx
       scroll = { enabled = false },
+
+      sources = {
+        explorer = {
+          -- Do not show files that are gitignored in the side picker
+          -- git_untracked = false,
+        },
+      },
     },
   },
 
@@ -89,6 +96,16 @@ return {
   -- Add a scroll bar that shows annotations
   {
     "petertriho/nvim-scrollbar",
+    dependencies = {
+      "lewis6991/gitsigns.nvim",
+      "kevinhwang91/nvim-hlslens",
+    },
+    opts = {
+      handlers = {
+        gitsigns = true,
+        search = true,
+      },
+    },
   },
 
   -- Do not have <CR> automatically insert autocomplete suggestion (annoying if it's at the
@@ -125,8 +142,5 @@ return {
   },
 }
 
--- TODO
--- Switching tabs
--- Ctrl-P file manager
---
 -- Reminders:
+--  Need to install `fd` for the file pickers to work.
