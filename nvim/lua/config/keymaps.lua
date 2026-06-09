@@ -9,8 +9,11 @@ vim.keymap.set({ "i" }, "jk", "<Esc>")
 vim.keymap.set({ "n" }, "<D-a>", "ggVG")
 vim.keymap.set({ "i", "v" }, "<D-a>", "<ESC>ggVG")
 
--- <C--> should jump back to the previous cursor location in addition to <C-o>, <C-t>, just like in VSCode
+-- vscode: <C--> should jump back to the previous cursor location in addition to <C-o>, <C-t>
 vim.keymap.set({ "n", "i" }, "<C-->", "<C-o>")
+
+-- vscode: <C-.> triggers code actions
+vim.keymap.set({ "n" }, "<C-.>", ",ca", { remap = true })
 
 -- <Alt-BS> should remove a whole word.
 vim.keymap.set({ "i" }, "<A-bs>", "<C-w>")
