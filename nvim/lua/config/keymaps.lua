@@ -18,3 +18,6 @@ vim.keymap.set({ "i" }, "<A-bs>", "<C-w>")
 -- <D-{>, <D-}> should move between buffers
 vim.keymap.set({ "n" }, "<D-{>", ":bp<CR>")
 vim.keymap.set({ "n" }, "<D-}>", ":bn<CR>")
+
+-- <D-p> opens (LazyVim) file finder
+vim.keymap.set({ "n" }, "<D-p>", ",ff", { remap = true })
