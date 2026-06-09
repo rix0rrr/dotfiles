@@ -144,3 +144,7 @@ return {
 
 -- Reminders:
 --  Need to install `fd` for the file pickers to work.
+--
+--
+-- #!/bin/bash
+-- exec open -a Neovide --args --chdir=$PWD "$@" &
