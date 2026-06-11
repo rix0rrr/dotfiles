@@ -28,9 +28,6 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_length = 0
   vim.g.neovide_cursor_animation_length = 0
 
-  local function save()
-    vim.cmd.write()
-  end
   local function copy()
     vim.cmd([[normal! "+y]])
   end
@@ -42,7 +39,6 @@ if vim.g.neovide then
     vim.cmd(":quit")
   end
 
-  vim.keymap.set({ "n", "i", "v" }, "<D-s>", save, { desc = "Save" })
   vim.keymap.set("v", "<D-c>", copy, { silent = true, desc = "Copy" })
   vim.keymap.set({ "n", "i", "v", "c", "t" }, "<D-v>", paste, { silent = true, desc = "Paste" })
   vim.keymap.set({ "n", "i", "v", "c", "t" }, "<D-w>", quit, { desc = "Quit" })

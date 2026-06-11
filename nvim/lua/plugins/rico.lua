@@ -140,6 +140,10 @@ return {
     --   vim.cmd.colorscheme("oasis") -- After setup, apply theme (or any style like "oasis-night")
     -- end,
   },
+
+  -- Stop inserting closing brackets, you suck at it
+  { "nvim-mini/mini.pairs", enabled = false },
+  { "altermo/ultimate-autopair.nvim", enabled = false },
 }
 
 -- Reminders:

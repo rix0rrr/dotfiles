@@ -24,3 +24,7 @@ vim.keymap.set({ "n" }, "<D-}>", ":bn<CR>")
 
 -- <D-p> opens (LazyVim) file finder
 vim.keymap.set({ "n" }, "<D-p>", ",ff", { remap = true })
+
+vim.keymap.set({ "n", "i", "v" }, "<D-s>", function()
+  vim.cmd.write()
+end, { desc = "Save" })
