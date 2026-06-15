@@ -29,3 +29,8 @@ vim.keymap.set({ "n" }, "<D-p>", ",ff", { remap = true })
 vim.keymap.set({ "n", "i", "v" }, "<D-s>", function()
   vim.cmd.write()
 end, { desc = "Save" })
+
+-- <leader>go opens current file on GitHub
+vim.keymap.set({ "n" }, "<leader>go", function()
+  Snacks.gitbrowse()
+end, { desc = "Open on GitHub" })

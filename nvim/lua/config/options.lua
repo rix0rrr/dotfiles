@@ -61,3 +61,6 @@ if vim.g.neovide then
     vim.g.neovide_scale_factor = 1.0
   end)
 end
+
+-- Do not autoformat using prettier if there is no prettier config
+vim.g.lazyvim_prettier_needs_config = true
