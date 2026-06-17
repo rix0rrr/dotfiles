@@ -35,7 +35,6 @@ if vim.g.neovide then
     vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
   end
   local function quit()
-    -- TODO: Maybe check for tabs and close a tab instead?
     vim.cmd(":quit")
   end
 

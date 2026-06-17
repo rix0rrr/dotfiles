@@ -34,3 +34,34 @@ end, { desc = "Save" })
 vim.keymap.set({ "n" }, "<leader>go", function()
   Snacks.gitbrowse()
 end, { desc = "Open on GitHub" })
+
+-- ZZ should do what I want it to do (write/close and exit), but then in LazyVim's opinionated buffers/windows system
+vim.keymap.set({ "n" }, "ZZ", function()
+  local function is_file_buf(buf)
+    return vim.api.nvim_buf_is_loaded(buf) and vim.api.nvim_get_option_value("buftype", { buf = buf }) == ""
+  end
+
+  -- Only if the current buffer is a writable file-backed buffer. Only '' are normal file buffers.
+  if not is_file_buf(0) then
+    return
+  end
+
+  -- Save if we have a file name
+  if vim.api.nvim_buf_get_name(0) ~= "" then
+    vim.cmd.write()
+  end
+
+  -- If it's the last buffer then exit, otherwise delete this buffer.
+  local valid_bufs = 0
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if is_file_buf(buf) then
+      valid_bufs = valid_bufs + 1
+    end
+  end
+  vim.print({ "valid bufs", valid_bufs })
+  if valid_bufs == 1 then
+    vim.cmd(":qa")
+  else
+    require("snacks").bufdelete()
+  end
+end)
