@@ -106,6 +106,7 @@ return {
         search = true,
       },
     },
+    -- Disabled: it is quite slow
     enabled = false,
   },
 
